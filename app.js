@@ -38,9 +38,12 @@ function onMouseMove(event){
     }
 }
 function handleColorClick(event){
-    const color = event.target.style.backgroundColor;
+    const div = event.target;
+    const color = div.style.backgroundColor;
     ctx.strokeStyle = color;
     ctx.fillStyle = color;
+    Array.from(colors).forEach(color => color.innerText = "");
+    div.innerText = "✓";
 }
 function handleRangeChange(event){
     const lineWidth = event.target.value;
